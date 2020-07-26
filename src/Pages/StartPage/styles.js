@@ -9,4 +9,15 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
 
+  h1{
+    font-size: 90px;
+  }
+
+  .titleOne{
+    margin-left: -250px;
+  }
+  .titleTwo{
+    margin-left: 100px;
+  }
+
 `;
