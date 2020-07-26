@@ -6,6 +6,10 @@ export const Container = styled.div`
   top:0;
   background: none;
 
+  h1{
+    background: none;
+  }
+
   .header-info{
     width: 90%;
     display: flex;
@@ -18,6 +22,8 @@ export const Container = styled.div`
   .life-count{
     display:flex;
     align-items: center;
+    background: none;
+
   }
   .life-count img{
     width: 50px;
