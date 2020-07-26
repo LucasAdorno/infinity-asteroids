@@ -4,7 +4,7 @@ export default function Asteroid (p,pos, r) {
     this.pos = p.createVector(pos.x,pos.y+p.random(-17,17));
   }
   else {
-    this.pos = p.createVector(p.random(p.width)+1000, p.random(p.height));
+    this.pos = p.createVector(window.innerWidth+p.random(500,1000), p.random(p.height));
   }
   if (r){
     this.r = r*0.5;
