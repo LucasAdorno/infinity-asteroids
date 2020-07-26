@@ -51,7 +51,7 @@ export default function sketch(p) {
         life--;
         localStorage.setItem('lifes', JSON.stringify(life));
         invenc = true;
-        setTimeout(()=>{invenc = false}, 1000)
+        setTimeout(()=>{invenc = false}, 1000)//-----------------
       }
     }
 
@@ -82,7 +82,7 @@ export default function sketch(p) {
       }
     }
     p.keyPressed = () => {
-      if (p.key === 's') {
+      if (p.key === 's' || p.key === 'S') {
         lasers.push(new Laser(p))
       }
     }
