@@ -21,11 +21,13 @@ export default function sketch(p) {
     ship = new Ship(p);
     setInterval(() => {
       if (life > 0){
-        asteroids.push(new Asteroid(p));
+        if(asteroids.length < 30){
+          asteroids.push(new Asteroid(p));
+        }
       }
       else {
-        alert('game over')
-      }}, 600)
+        window.location.href = "/ppp";
+      }}, 800)
       paralax[0] = new Paralax(p, 0.3);
       paralax[1] = new Paralax(p, 0.6);
       paralax[2] = new Paralax(p, 0.9);
@@ -43,9 +45,6 @@ export default function sketch(p) {
     for (let i = 0; i < asteroids.length; i++) {
       asteroids[i].render();
       asteroids[i].update();
-      // if (asteroids[i].offscreen()) {
-      //   asteroids.splice(i, 1)
-      // }
       asteroids[i].offscreen();
 
       if (ship.hits(asteroids[i]) && invenc === false ) {

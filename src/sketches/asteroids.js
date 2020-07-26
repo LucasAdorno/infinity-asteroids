@@ -29,7 +29,7 @@ export default function Asteroid (p,pos, r) {
   this.render = () => {
     p.push();
     p.stroke(255);
-    p.noFill();
+    p.fill(0);
     p.translate(this.pos.x, this.pos.y);
     p.beginShape();
     for (let i = 0; i < this.total; i++){
