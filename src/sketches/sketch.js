@@ -4,7 +4,6 @@ import Asteroid from './asteroids.js';
 import Paralax from './paralax.js';
 
 export default function sketch(p) {
-  let canvas;
   let ship;
   let lasers = [];
   let asteroids = [];
@@ -26,7 +25,7 @@ export default function sketch(p) {
         }
       }
       else {
-        window.location.href = "/ppp";
+        window.location.href = "/";
       }}, 800)
       paralax[0] = new Paralax(p, 0.3);
       paralax[1] = new Paralax(p, 0.6);
