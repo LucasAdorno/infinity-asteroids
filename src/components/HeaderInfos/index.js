@@ -1,20 +1,28 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from './styles';
 
-function HeaderInfos (){
+function HeaderInfos() {
 
-  const[points, setPoints] = useState(JSON.parse(localStorage.getItem('points')))
+  const [points, setPoints] = useState(0)
+  const [life, setLife] = useState(3)
 
-  useEffect(()=>{
+  useEffect(() => {
     setInterval(() => {
-      setPoints(JSON.parse(localStorage.getItem('points')))
-    }, 100)
+      const lspoints = JSON.parse(localStorage.getItem('points'))
+      const lslife = JSON.parse(localStorage.getItem('lifes'))
+      if (points !== lspoints || life !== lslife) {
+        setPoints(lspoints)
+        setLife(lslife)
+      }
+    }, 200)
   }, [])
 
-  return(
+  return (
     <Container>
-      <h1>{points}</h1>
-      <h1>3</h1>
+      <div>
+        <h1>{life}</h1>
+        <h1>{points}</h1>
+      </div>
     </Container>
   );
 }
