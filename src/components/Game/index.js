@@ -4,19 +4,14 @@ import sketch from '../../sketches/sketch';
 import HeaderInfos from '../HeaderInfos';
 
 
-class Game extends Component {
-  // constructor(){
-  //   super();
-  // }
+const Game = () => {
 
-  render() {
-    return (
+  return(
       <div>
         <P5Wrapper sketch={sketch}></P5Wrapper>
         <HeaderInfos />
       </div>
     );
-  }
 }
 
 export default Game;

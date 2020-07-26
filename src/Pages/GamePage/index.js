@@ -8,7 +8,6 @@ const GamePage = () => {
 
   return(
     <Game/>
-    <HeaderInfos/>
   );
 }
 
