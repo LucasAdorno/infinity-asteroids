@@ -30,7 +30,7 @@ export default function Asteroid (p,pos, r) {
     p.translate(this.pos.x, this.pos.y);
     p.beginShape();
     for (let i = 0; i < this.total; i++){
-      let angle = p.map(i, 0, this.total, 0, 0);
+      let angle = p.map(i, 0, this.total, 0, 6.30);
       let r = this.r + this.offset[i];
       let x = r * p.cos(angle);
       let y = r * p.sin(angle);
