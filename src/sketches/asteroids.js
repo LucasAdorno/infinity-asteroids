@@ -44,10 +44,10 @@ export default function Asteroid (p,pos, r) {
   }
 
   this.offscreen = () => {
-    if (this.pos.x < 0) {
-      return true;
-    }
-    return false;
+    if(this.pos.x < 0){
+        this.pos.x = p.windowWidth+300;
+        this.pos.y = p.random(0, p.windowHeight);
+      }
   }
 
   this.breakup = () => {

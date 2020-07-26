@@ -33,7 +33,7 @@ export default function sketch(p) {
   }
 
   p.draw = () => {
-    p.background(0);
+    p.background(0,0,0);
 
     for(let cenario of paralax){
         cenario.update(p);
@@ -43,9 +43,10 @@ export default function sketch(p) {
     for (let i = 0; i < asteroids.length; i++) {
       asteroids[i].render();
       asteroids[i].update();
-      if (asteroids[i].offscreen()) {
-        asteroids.splice(i, 1)
-      }
+      // if (asteroids[i].offscreen()) {
+      //   asteroids.splice(i, 1)
+      // }
+      asteroids[i].offscreen();
 
       if (ship.hits(asteroids[i]) && invenc === false ) {
         life--;
