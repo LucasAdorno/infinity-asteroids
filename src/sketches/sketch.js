@@ -11,10 +11,13 @@ export default function sketch(p) {
   let life = 3;
   let points = 0;
   let invenc = false;
+  localStorage.setItem('points', JSON.stringify(0));
+  localStorage.setItem('lifes', JSON.stringify(3));
+
 
 
   p.setup = () => {
-    canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+    p.createCanvas(p.windowWidth, p.windowHeight);
     p.noStroke();
     ship = new Ship(p);
     setInterval(() => {
@@ -23,7 +26,7 @@ export default function sketch(p) {
       }
       else {
         alert('game over')
-      }}, 800)
+      }}, 600)
 
   }
 
@@ -39,7 +42,7 @@ export default function sketch(p) {
 
       if (ship.hits(asteroids[i]) && invenc === false ) {
         life--;
-        localStorage.setItem('points', JSON.stringify(life));
+        localStorage.setItem('lifes', JSON.stringify(life));
         invenc = true;
         setTimeout(()=>{invenc = false}, 1000)//-----------------
       }
@@ -47,11 +50,7 @@ export default function sketch(p) {
 
     ship.render();
 
-    p.keyPressed = () => {
-      if (p.key === 's') {
-        lasers.push(new Laser(p))
-      }
-    }
+
 
     for (let i = lasers.length - 1; i >= 0; i--) {
       lasers[i].render();
@@ -73,6 +72,11 @@ export default function sketch(p) {
             break;
           }
         }
+      }
+    }
+    p.keyPressed = () => {
+      if (p.key === 's') {
+        lasers.push(new Laser(p))
       }
     }
   }
