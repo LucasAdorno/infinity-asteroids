@@ -13,10 +13,10 @@ export const Container = styled.div`
     font-size: 90px;
   }
 
-  .titleOne{
+  .title-one{
     margin-left: -250px;
   }
-  .titleTwo{
+  .title-two{
     margin-left: 100px;
   }
 

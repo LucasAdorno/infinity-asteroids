@@ -7,8 +7,8 @@ const StartPage = ()=>{
 
   return(
     <Container>
-      <h1 className='titleOne'>Infinty</h1>
-      <h1 className='titleTwo'>Asteroids</h1>
+      <h1 className='title-one'>Infinty</h1>
+      <h1 className='title-two'>Asteroids</h1>
       <Link to='/play'><Button text='Start'/></Link>
       <Link><Button text='Instructions' /></Link>
       <Link><Button text='Repository'/></Link>
