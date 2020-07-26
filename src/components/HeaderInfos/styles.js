@@ -5,7 +5,6 @@ export const Container = styled.div`
   position: absolute;
   top:0;
   background: none;
-  color: #fafafa;
 
   div{
     width: 90%;

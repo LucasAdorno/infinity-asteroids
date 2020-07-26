@@ -9,7 +9,6 @@ export const Container = styled.div`
   height: 80px;
   border: 2px solid #fff;
   margin: 20px;
-  color: #fff;
   background: none;
   outline: none;
 
