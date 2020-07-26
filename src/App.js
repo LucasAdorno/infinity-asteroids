@@ -1,10 +1,10 @@
 import React from 'react';
-import Test from './components/Test';
+import Game from './components/Game';
 import './app.css'
 
 function App() {
   return (
-    <Test />
+    <Game />
   );
 }
 

@@ -9,6 +9,7 @@ export default function sketch(p) {
   let lasers = [];
   let asteroids = [];
   let life = 3;
+  let points = 0;
   let invenc = false;
 
 
@@ -49,7 +50,8 @@ export default function sketch(p) {
     p.keyPressed = () => {
       if (p.key === 's') {
         lasers.push(new Laser(p))
-        console.log(asteroids);
+        console.log(points);
+
       }
     }
 
@@ -62,6 +64,7 @@ export default function sketch(p) {
       else {
         for (let j = asteroids.length - 1; j >= 0; j--) {
           if (lasers[i].hits(asteroids[j])) {
+            points += 100;
             if (asteroids[j].r > 25) {
               let newAsteroids = asteroids[j].breakup();
               asteroids = asteroids.concat(newAsteroids);
@@ -73,6 +76,5 @@ export default function sketch(p) {
         }
       }
     }
-
   }
 }

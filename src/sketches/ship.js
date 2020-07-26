@@ -14,8 +14,7 @@ export default function Ship(p) {
   }
 
   this.hits = (asteroid) => {
-    let d = p.dist(this.pos.x, this.pos.y, asteroid.pos.x, asteroid.pos.y);
-    
+    let d = p.dist(150, p.mouseY, asteroid.pos.x, asteroid.pos.y);
     if(d < this.r + asteroid.r){
       return true;
     }
