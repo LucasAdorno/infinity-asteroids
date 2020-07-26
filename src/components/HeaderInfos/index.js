@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from './styles';
+import Heart from '../../assets/heart.png'
+
 
 function HeaderInfos() {
 
@@ -19,8 +21,11 @@ function HeaderInfos() {
 
   return (
     <Container>
-      <div>
-        <h1>{life}</h1>
+      <div className='header-info'>
+        <div className='life-count'>
+          <img src={Heart} alt="life image"/>
+          <h1> x {life}</h1>
+        </div>
         <h1>{points}</h1>
       </div>
     </Container>
