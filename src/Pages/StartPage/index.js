@@ -7,11 +7,11 @@ const StartPage = ()=>{
 
   return(
     <Container>
-      <h1 className='title-one'>Infinty</h1>
+      <h1 className='title-one'>Infinity</h1>
       <h1 className='title-two'>Asteroids</h1>
       <Link to='/play'><Button text='Start'/></Link>
       <Link><Button text='Instructions' /></Link>
-      <Link><Button text='Repository'/></Link>
+      <a href='https://www.github.com/LucasAdorno/asteroids_p5React'><Button text='Repository'/></a>
     </Container>
   );
 }

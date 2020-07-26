@@ -11,6 +11,7 @@ export const Container = styled.div`
 
   h1{
     font-size: 90px;
+    text-shadow: 0px 0px 8px #0ef
   }
 
   .title-one{
