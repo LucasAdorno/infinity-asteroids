@@ -25,7 +25,7 @@ export default function sketch(p) {
         }
       }
       else {
-        window.location.href = "/";
+        window.location.href = "/gameover";
       }}, 800)
       paralax[0] = new Paralax(p, 0.3);
       paralax[1] = new Paralax(p, 0.6);
@@ -82,7 +82,9 @@ export default function sketch(p) {
     }
     p.keyPressed = () => {
       if (p.key === 's' || p.key === 'S') {
-        lasers.push(new Laser(p))
+        if(lasers.length <= 10){
+          lasers.push(new Laser(p))
+        }
       }
     }
   }
