@@ -1,20 +1,19 @@
 import Ship from "./ship.js";
 import Laser from './laser.js';
 import Asteroid from './asteroids.js';
-
+import Paralax from './paralax.js';
 
 export default function sketch(p) {
   let canvas;
   let ship;
   let lasers = [];
   let asteroids = [];
+  let paralax = [];
   let life = 3;
   let points = 0;
   let invenc = false;
   localStorage.setItem('points', JSON.stringify(0));
   localStorage.setItem('lifes', JSON.stringify(3));
-
-
 
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight);
@@ -27,11 +26,19 @@ export default function sketch(p) {
       else {
         alert('game over')
       }}, 600)
+      paralax[0] = new Paralax(p, 0.3);
+      paralax[1] = new Paralax(p, 0.6);
+      paralax[2] = new Paralax(p, 0.9);
 
   }
 
   p.draw = () => {
     p.background(0);
+
+    for(let cenario of paralax){
+        cenario.update(p);
+        cenario.render(p);
+      };
 
     for (let i = 0; i < asteroids.length; i++) {
       asteroids[i].render();
