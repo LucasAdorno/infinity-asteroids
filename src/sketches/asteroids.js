@@ -1,7 +1,9 @@
 export default function Asteroid (p,pos, r) {
 
+  let upVel = 5;
+
   if (pos){
-    this.pos = p.createVector(pos.x,pos.y+p.random(-17,17));
+    this.pos = p.createVector(pos.x,pos.y+p.random(-20,20));
   }
   else {
     this.pos = p.createVector(window.innerWidth+p.random(500,1000), p.random(p.height));
@@ -20,7 +22,8 @@ export default function Asteroid (p,pos, r) {
   }
 
   this.update = () => {
-    this.pos.add(-5, 0);
+    upVel += 0.02;
+    this.pos.add(-upVel, 0);
   }
 
   this.render = () => {
@@ -43,7 +46,7 @@ export default function Asteroid (p,pos, r) {
   this.offscreen = () => {
     if (this.pos.x < 0) {
       return true;
-    } 
+    }
     return false;
   }
 
