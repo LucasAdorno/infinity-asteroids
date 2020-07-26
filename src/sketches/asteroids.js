@@ -39,7 +39,7 @@ export default function Asteroid (p,pos, r) {
       let y = r * p.sin(angle);
       p.vertex(x, y);
     }
-    p.endShape();
+    p.endShape(p.CLOSE);
     p.pop();
   }
 
