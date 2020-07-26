@@ -51,7 +51,7 @@ export default function sketch(p) {
         life--;
         localStorage.setItem('lifes', JSON.stringify(life));
         invenc = true;
-        setTimeout(()=>{invenc = false}, 1000)//-----------------
+        setTimeout(()=>{invenc = false}, 1000)
       }
     }
 
