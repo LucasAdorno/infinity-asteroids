@@ -53,7 +53,7 @@ export default function sketch(p) {
       asteroid.update();
       asteroid.offscreen();
 
-      if (ship.hits(asteroid) && invenc === false) {
+      if (ship.hits(p, asteroid) && invenc === false) {
         life--;
         localStorage.setItem('lifes', JSON.stringify(life));
         invenc = true;
@@ -61,7 +61,7 @@ export default function sketch(p) {
       }
     })
 
-    ship.render();
+    ship.render(p);
 
     lasers.forEach(laser => {
       laser.render();
