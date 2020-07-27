@@ -1,32 +1,36 @@
-export default function Asteroid (p,pos, r) {
+export default class Asteroid {
 
-  let upVel = 5;
+  constructor(p,pos, r){
 
-  if (pos){
-    this.pos = p.createVector(pos.x,pos.y+p.random(-20,20));
-  }
-  else {
-    this.pos = p.createVector(window.innerWidth+p.random(500,1000), p.random(p.height));
-  }
-  if (r){
-    this.r = r*0.5;
-  }
-  else {
-    this.r = p.random(15,50);
+    this.upVel = 5;
+    this.offset = [];
+    this.total = p.floor(p.random(5, 15));
+
+    if (pos){
+      this.pos = p.createVector(pos.x,pos.y+p.random(-20,20));
+    }
+    else {
+      this.pos = p.createVector(window.innerWidth+p.random(500,1000), p.random(p.height));
+    }
+    if (r){
+      this.r = r*0.5;
+    }
+    else {
+      this.r = p.random(15,50);
+    }
+
+    for (let i = 0; i< this.total; i++){
+      this.offset[i] = p.random(-this.r * 0.5, this.r * 0.5);
+    }
+
   }
 
-  this.total = p.floor(p.random(5, 15));
-  this.offset = [];
-  for (let i = 0; i< this.total; i++){
-    this.offset[i] = p.random(-this.r * 0.5, this.r * 0.5);
+  update(p) {
+    this.upVel += 0.02;
+    this.pos.add(-this.upVel, 0);
   }
 
-  this.update = () => {
-    upVel += 0.02;
-    this.pos.add(-upVel, 0);
-  }
-
-  this.render = () => {
+  render(p) {
     p.push();
     p.stroke(255);
     p.fill(0);
@@ -43,14 +47,14 @@ export default function Asteroid (p,pos, r) {
     p.pop();
   }
 
-  this.offscreen = () => {
+  offscreen(p) {
     if(this.pos.x < 0){
         this.pos.x = p.windowWidth+300;
         this.pos.y = p.random(0, p.windowHeight);
       }
   }
 
-  this.breakup = () => {
+  breakup(p) {
     let newA = [];
     newA[0] = new Asteroid(p,this.pos, this.r );
     newA[1] = new Asteroid(p,this.pos, this.r );
