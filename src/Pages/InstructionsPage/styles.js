@@ -14,7 +14,7 @@ export const Container = styled.div`
     text-shadow: 0px 0px 8px #0ef
   }
 
-  .instr-laser, .instr-move{
+  .instr-laser, .instr-move, .touch{
     width: 650px;
     display: flex;
     align-items: center;
@@ -38,6 +38,39 @@ export const Container = styled.div`
     margin-left: -10px;
   }
 
+  .touch div{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
 
+  .touch .desc{
+    margin-left: 20px;
+  }
 
+  @media(max-width: 900px){
+    h1{
+      font-size: 40px;
+    }
+
+    .instr-laser, .instr-move, .touch{
+      width: 100%;
+      display: flex;
+      align-items: center;
+     }
+
+    .instr-move img{
+      width: 70px;
+      height: 50px;
+      margin-left: 0px;
+    }
+
+    .touch div{
+      margin-left: 5px;
+      height:2rem;
+      width: 2rem;
+    }
+
+  }
 `;

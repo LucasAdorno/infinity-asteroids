@@ -11,7 +11,15 @@ export const Container = styled.div`
 
   h1{
     font-size: 90px;
-    text-shadow: 0px 0px 8px #0ef
+    text-shadow: 0px 0px 8px #0ef;
+  }
+
+  @media(max-width: 900px){
+    h1{
+      font-size: 40px;
+      text-shadow: 0px 0px 8px #0ef;
+    }
+
   }
 
 `;

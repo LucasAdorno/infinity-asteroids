@@ -21,4 +21,10 @@ export const Container = styled.div`
     margin-left: 100px;
   }
 
+  @media(max-width: 900px){
+    h1{
+      font-size: 40px;
+      margin-left:0 !important;
+    }
+
 `;

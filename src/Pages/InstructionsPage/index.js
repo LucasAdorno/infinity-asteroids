@@ -13,6 +13,10 @@ const InstructionsPage = () => {
         <h3 className="tecl">S</h3>
         <h3 className="desc"> Press 'S' to shoot the laser.</h3>
       </div>
+      <div className="touch">
+        <div></div>
+        <h3 className="desc">If you play on mobile device, shoot with touch</h3>
+      </div>
       <div className="instr-move">
         <img src={Mouse} alt="mouse pixel art"/>
         <h3 className="desc">Move the mouse up or down to control the spaceship.</h3>
