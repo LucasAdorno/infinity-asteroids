@@ -22,7 +22,7 @@
 ## Preview
 
 <div align="center">
-  <img src="screenshots/startpage.png" width="767">
-  <img src="screenshots/gamepage.png" width="767">
-  <img src="screenshots/endpage.png" width="767">
+  <img src="screenshots/StartPage.png" width="800">
+  <img src="screenshots/GamePage.png" width="800">
+  <img src="screenshots/EndPage.png" width="800">
 </div>
