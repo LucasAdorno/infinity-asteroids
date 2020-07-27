@@ -22,6 +22,7 @@
 ## Preview
 
 <div align="center">
-  <img src="src/assets/desktop.png" width="767">
-  <img src="src/assets/mobile.png" width="307">
+  <img src="screenshots/startpage.png" width="767">
+  <img src="screenshots/gamepage.png" width="767">
+  <img src="screenshots/endpage.png" width="767">
 </div>
