@@ -32,7 +32,7 @@ export default function sketch(p) {
       else {
         window.location.href = "/gameover";
       }
-    }, 800)
+    }, 600)
 
     paralax[0] = new Paralax(p, 0.3);
     paralax[1] = new Paralax(p, 0.6);
