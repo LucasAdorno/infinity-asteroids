@@ -97,6 +97,11 @@ const sketch = (p) => {
         }
       }
     }
+    p.touchStarted = () => {
+      if(lasers.length <= 10 && p.windowWidth < 900){
+       lasers.push(new Laser(p))
+      }
+    }
   }
 }
 
