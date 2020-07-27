@@ -9,9 +9,9 @@ const StartPage = ()=>{
     <Container>
       <h1 className='title-one'>Infinity</h1>
       <h1 className='title-two'>Asteroids</h1>
-      <Link to='/play'>
+      <a href='/play'>
         <Button text='Start' />
-      </Link>
+      </a>
       <Link to='/instructions'>
         <Button text='Instructions' />
       </Link>
