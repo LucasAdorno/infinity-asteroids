@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import StartPage from '../Pages/StartPage';
@@ -14,8 +13,9 @@ const Routes = () => {
     <>
     <Sound
       url={Music}
+      loop={true}
+      autoLoad={true}
       playStatus={Sound.status.PLAYING}
-      loop='true'
     />
     <BrowserRouter>
       <Switch>
