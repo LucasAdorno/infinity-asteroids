@@ -91,7 +91,7 @@ const sketch = (p) => {
     });
 
     p.keyPressed = () => {
-      if (p.key === 's' || p.key === 'S') {
+      if (p.key === ' ') {
         if (lasers.length <= 10) {
           lasers.push(new Laser(p))
         }
