@@ -28,9 +28,10 @@ export const Container = styled.div`
   }
 
   .instr-laser .desc .tecl{
-    text-align: center;
+    display: flex;
+    align-items: center;
     margin: 0 12px 0 12px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     border: 2px solid #fff;
   }
@@ -60,6 +61,10 @@ export const Container = styled.div`
     .instr-laser, .instr-move, .touch{
       width: 100%;
      }
+
+    .instr-laser .desc .tecl{
+      margin: 0 2px 0 2px;
+    }
 
     .instr-move img{
       width: 70px;
