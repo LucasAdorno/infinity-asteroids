@@ -4,9 +4,10 @@
 ### Link: https://infinityasteroids.herokuapp.com/
 
 ## Built with:
-- ReactJs,
 - P5.js
+- ReactJs
 - React-router-dom
+- React-sound
 - Styled-components
 - A lot of coffee :)
 
@@ -22,7 +23,8 @@
 ## Preview
 
 <div align="center">
-  <img src="screenshots/StartPage.png" width="800">
-  <img src="screenshots/GamePage.png" width="800">
-  <img src="screenshots/EndPage.png" width="800">
+  <img src="screenshots/gamepage.png" width="800">
+  <img src="screenshots/startpage.png" width="800">
+  <img src="screenshots/instpage.png" width="800">
+  <img src="screenshots/endpage.png" width="800">
 </div>
