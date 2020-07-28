@@ -2,16 +2,14 @@ export default class Ship {
 
   constructor(p) {
     this.r = 20;
+    this.img = p.loadImage(require('../assets/ship.png'));
   }
 
 
   render(p) {
     p.push();
-    p.translate(150, p.mouseY || p.windowHeight/2 );
-    p.fill(0);
-    p.stroke(255);
-    p.strokeWeight(3);
-    p.triangle(-this.r, -this.r, this.r, 0, -this.r, this.r);
+    p.translate(110, p.mouseY-25);
+    p.image(this.img, 0 , 0, 55 ,50);
     p.pop();;
   }
 
