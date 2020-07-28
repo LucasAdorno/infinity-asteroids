@@ -1,13 +1,13 @@
 export default class Asteroid {
 
-  constructor(p,pos, r){
+  constructor(p,pos, r, respawn){
 
     this.upVel = 5;
     this.offset = [];
     this.total = p.floor(p.random(5, 15));
 
     if (pos){
-      this.pos = p.createVector(pos.x,pos.y+p.random(-20,20));
+      this.pos = p.createVector(pos.x, pos.y + p.random(25, 40)*respawn);
     }
     else {
       this.pos = p.createVector(window.innerWidth+p.random(500,1000), p.random(p.height));
@@ -56,8 +56,8 @@ export default class Asteroid {
 
   breakup(p) {
     let newA = [];
-    newA[0] = new Asteroid(p,this.pos, this.r );
-    newA[1] = new Asteroid(p,this.pos, this.r );
+    newA[0] = new Asteroid(p,this.pos, this.r, -1 );
+    newA[1] = new Asteroid(p,this.pos, this.r, 1 );
     return newA;
   }
 }
