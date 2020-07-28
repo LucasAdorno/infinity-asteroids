@@ -16,8 +16,8 @@ export default class Laser {
   }
 
   hits(p, asteroid) {
-    let d = p.dist(this.pos.x, this.pos.y, asteroid.pos.x, asteroid.pos.y);
-    if (d < asteroid.r){
+    let dist = p.dist(this.pos.x, this.pos.y, asteroid.pos.x, asteroid.pos.y);
+    if (dist < asteroid.r){
       return true;
     }
     else {
