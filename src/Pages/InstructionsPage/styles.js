@@ -20,16 +20,19 @@ export const Container = styled.div`
     align-items: center;
   }
 
-  .instr-laser .tecl{
+
+  .instr-laser .desc{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .instr-laser .desc .tecl{
     text-align: center;
-    margin-left: 2px;
+    margin: 0 12px 0 12px;
     padding: 10px;
     border-radius: 5px;
     border: 2px solid #fff;
-  }
-
-  .instr-laser .desc{
-    margin-left: 20px;
   }
 
   .instr-move img{
@@ -56,8 +59,6 @@ export const Container = styled.div`
 
     .instr-laser, .instr-move, .touch{
       width: 100%;
-      display: flex;
-      align-items: center;
      }
 
     .instr-move img{

@@ -10,8 +10,7 @@ const InstructionsPage = () => {
     <Container>
       <h1>Instructions</h1>
       <div className="instr-laser">
-        <h3 className="tecl">S</h3>
-        <h3 className="desc"> Press 'S' to shoot the laser.</h3>
+        <h3 className="desc"> Press <h3 className="tecl">SPACE</h3>to shoot the laser.</h3>
       </div>
       <div className="touch">
         <div></div>
