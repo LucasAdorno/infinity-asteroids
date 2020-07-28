@@ -14,7 +14,7 @@ const Routes = () => {
     <Sound
       url={Music}
       loop={true}
-      volume={50}
+      volume={40}
       autoLoad={true}
       playStatus={Sound.status.PLAYING}
     />
