@@ -10,7 +10,7 @@ export default class Ship {
     p.push();
     p.translate(110, p.mouseY-25);
     p.image(this.img, 0 , 0, 55 ,50);
-    p.pop();;
+    p.pop();
   }
 
   hits(p, asteroid) {
