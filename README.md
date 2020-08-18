@@ -1,6 +1,6 @@
 # Infinity Asteroids
 
-### _Infinity Asteroids_ - The infinity runner game asteroids.
+### _Infinity Asteroids_ - The infinity runner game asteroids
 ### Link: https://infinityasteroids.herokuapp.com/
 
 ## Built with:
