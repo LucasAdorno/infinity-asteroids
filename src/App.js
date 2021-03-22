@@ -1,10 +1,10 @@
 import React from 'react';
-import Routes from './Routes/routes';
+import GamePage from './Pages/GamePage';
 import './App.css'
 
 function App() {
   return (
-    <Routes />
+    <GamePage />
   );
 }
 

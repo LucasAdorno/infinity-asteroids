@@ -5,7 +5,7 @@ import Game from '../../components/Game';
 const GamePage = () => {
 
   return(
-    <Container>
+    <Container id="canvas-limit">
       <Game/>
     </Container>
   );

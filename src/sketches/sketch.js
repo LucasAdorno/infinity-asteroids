@@ -1,108 +1,99 @@
-import Ship from "./ship.js";
-import Laser from './laser.js';
-import Asteroid from './asteroids.js';
-import Paralax from './paralax.js';
+
+import Shuttle from './shuttle';
+import Obstacle from './obstacle'
+
+// let p5 = require('p5/lib/addons/p5.sound');
 
 const sketch = (p) => {
-  let ship;
-  let lasers = [];
-  let asteroids = [];
-  let paralax = [];
-  let life = 3;
-  let points = 0;
-  let invenc = false;
-  let pos;
-  localStorage.setItem('points', JSON.stringify(0));
-  localStorage.setItem('lifes', JSON.stringify(3));
+let stl;
+let o;
+let bg;
+let end=true;
+let intro=true;
+let score=0;
+let obstacles=[];
+let birdCollision;
 
-  p.setup = () => {
-    p.createCanvas(p.windowWidth, p.windowHeight);
+ p.setup = () => {
+  let canvasDiv = document.querySelector("#canvas-limit");
+  let width = canvasDiv.offsetWidth;
+  let height = canvasDiv.offsetHeight;
+  p.createCanvas(width, height); 
+  p.frameRate(30);
+  p.textSize(32);
+  bg = p.loadImage(require('../assets/background.svg'));
+  // birdCollision = p5.loadSound(require('../assets/birdCollision.mp3'));
 
-    paralax[0] = new Paralax(p, 0.3);
-    paralax[1] = new Paralax(p, 0.6);
-    paralax[2] = new Paralax(p, 0.9);
-
-
-    ship = new Ship(p);
-
-    setInterval(() => {
-      if (asteroids.length < 40) {
-        asteroids.push(new Asteroid(p));
-      }
-    }, 600)
-
-
-  }
-
-  p.draw = () => {
-    p.background(0);
-
-    paralax.forEach(scene => {
-      scene.update(p);
-      scene.render(p);
-    });
-
-    ship.render(p);
-
-    asteroids.forEach(asteroid => {
-      asteroid.render(p);
-      asteroid.update(p);
-      asteroid.offscreen(p);
-
-      if (ship.hits(p, asteroid) && invenc === false) {
-        life--;
-        localStorage.setItem('lifes', JSON.stringify(life));
-        invenc = true;
-        if (life === 0) {
-          return window.location.href = "/gameover";
-        }
-        setTimeout(() => { invenc = false }, 800)
-      }
-    });
-
-    lasers.forEach(laser => {
-      laser.render(p);
-      laser.update(p);
-
-      if (laser.offscreen(p)) {
-        pos = lasers.indexOf(laser)
-        lasers.splice(pos, 1)
-      }
-
-      else {
-        asteroids.forEach(asteroid => {
-
-          if (laser.hits(p, asteroid)) {
-            points += 100;
-            localStorage.setItem('points', JSON.stringify(points));
-
-            if (asteroid.r > 25) {
-              let newAsteroids = asteroid.breakup(p);
-              asteroids = asteroids.concat(newAsteroids);
-            }
-
-            pos = asteroids.indexOf(asteroid);
-            asteroids.splice(pos, 1);
-            pos = lasers.indexOf(laser)
-            lasers.splice(pos, 1);
-          }
-        })
-      }
-    });
-
-    p.keyPressed = () => {
-      if (p.key === ' ') {
-        if (lasers.length <= 10) {
-          lasers.push(new Laser(p))
-        }
-      }
+  setInterval(() => {
+    if (obstacles.length < 3) {
+      obstacles.push(new Obstacle(p, score+1));
     }
-    p.touchStarted = () => {
-      if(lasers.length <= 10 && p.windowWidth < 900){
-       lasers.push(new Laser(p))
+  }, 1500)
+}
+
+p.draw = () => {
+  p.background(bg);
+  p.fill(0);
+  p.stroke(255);
+  if (!end) {
+    stl.move(p);
+    // o.move(p, score);
+    stl.drag(p);
+    
+    if(!stl.isAlive(p)) {
+      end = true;
+    }
+
+    obstacles.forEach(obstacle => {
+      obstacle.render(p);
+      obstacle.move(p);
+      obstacle.offscreen(p);
+      if(stl.detectCollision(p, obstacle.pos, obstacle.size)){
+        // birdCollision.play();
+        end = true;
       }
+    });
+    
+    // if (!o.isAlive(p)) {
+    //   o = new Obstacle(p);
+    // }
+
+    stl.render(p);
+    // o.render(p);
+
+    score+= 0.5;
+    
+    p.fill(255);
+    p.textAlign(p.RIGHT);
+    p.text(p.int(score), p.width-30, 58);
+  } else {
+    p.fill(255);
+    p.textAlign(p.CENTER);
+    if (intro) {
+      p.text("Clique para Jogar", p.width/2, 140);
+    } else {
+      p.text("Clique para Jogar", p.width/2, 140);
+      p.text("score", p.width/2, 240);
+      p.text(p.int(score), p.width/2, 280);
+      obstacles = [];
     }
   }
+}
+
+ p.reset = () => {
+  end = false;
+  score=0;
+  stl = new Shuttle(p);
+  // o = new Obstacle(p);
+}
+
+p.mouseClicked = () => {
+  intro=false;
+  if (end) {
+    p.reset(p);
+  }
+  stl.jump(p, p.mouseX, score);
+}
 }
 
 export default sketch;
