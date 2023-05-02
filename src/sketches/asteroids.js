@@ -2,7 +2,7 @@ export default class Asteroid {
 
   constructor(p,pos, r, respawn){
 
-    this.upVel = 5;
+    this.upVel = 3;
     this.offset = [];
     this.total = p.floor(p.random(5, 15));
 
