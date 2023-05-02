@@ -1,7 +1,7 @@
 # Infinity Asteroids
 
 ### _Infinity Asteroids_ - The infinity runner game asteroids
-### Link: https://infinityasteroids.herokuapp.com/
+### Link: https://infinity-asteroids.vercel.app/
 
 ## Built with:
 - P5.js
